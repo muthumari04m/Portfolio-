@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply bg-navy text-ink font-sans antialiased; }
+:focus-visible { outline: 2px solid #60A5FA; outline-offset: 3px; border-radius: 6px; }
+::selection { background: #60A5FA; color: #0B1020; }
+
+@layer components {
+  .btn { @apply inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors; }
+  .btn-primary { @apply bg-accent text-navy hover:bg-ink; }
+  .btn-ghost { @apply border border-white/15 text-ink hover:border-accent hover:text-accent; }
+  .tag { @apply rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
